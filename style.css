@@ -1,0 +1,324 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 15%;
+  border-bottom: 1px solid #000;
+  z-index: 10;
+}
+/* MY changes to menu bar active 
+.menu-bar {
+  text-align: center;
+  cursor: pointer;
+}
+
+.menu-bar ul {
+  display: inline-flex;
+  list-style: none;
+  color: #fff;
+
+  .menu-bar ul li {
+    width: 120px;
+    margin: 15px;
+    padding: 15px;
+  }
+  */
+
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 12px 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+nav .logo {
+  width: 200px;
+  cursor: pointer;
+  opacity: inherit;
+  border-radius: 80px;
+}
+
+.nav-btn {
+  background: #000;
+  color: rgb(221, 195, 164);
+  font-size: 16px;
+  padding: 15px 25px;
+  border: 0;
+  outline: 0;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.nav-btn img {
+  width: 15px;
+  margin-left: 7px;
+  color: rgb(221, 195, 164);
+}
+
+.header {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(#eefff9 0%, #ffccc1 49%, #dcdbff 100%);
+  padding: 0 10%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.header h1 {
+  margin-top: 100px;
+  font-size: 12vw;
+  line-height: 10vw;
+}
+
+.btn-container {
+  margin: 20px 0;
+}
+
+.header button {
+  border: 0;
+  outline: 0;
+  display: inline-flex;
+  align-items: center;
+  font-size: 18px;
+  margin-right: 18px;
+  cursor: pointer;
+}
+
+.btn-dark {
+  background: #000;
+  /* color: #fff; */
+  color: rgb(221, 195, 164);
+  padding: 8px 8px 8px 25px;
+  border-radius: 50px;
+}
+
+.btn-dark img {
+  width: 40px;
+  background: rgb(221, 195, 164);
+  /* background: #fff; */
+  border-radius: 50%;
+  padding: 10px;
+  margin-left: 20px;
+}
+
+.btn-light {
+  background: transparent;
+  text-decoration: underline;
+}
+
+.btn-light img {
+  width: 20px;
+  margin-left: 10px;
+}
+
+.header p {
+  max-width: 350px;
+  font-weight: 450;
+}
+
+.user-img {
+  width: 200%;
+  max-width: 800px;
+  position: absolute;
+  right: 15%;
+  bottom: 0;
+  padding-left: 150px;
+  margin-left: 100px;
+
+  /* width: 80%;
+  max-width: 500px;
+  position: absolute;
+  right: 13%;
+  bottom: 0; */
+}
+
+/* -------ANIMATION----------*/
+.header h1 span {
+  background: linear-gradient(#000, #000);
+  background-repeat: no-repeat;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-size: 0%;
+}
+
+.header h1 span:first-child {
+  animation: textcolor1 3s linear infinite alternate;
+}
+.header h1 span:last-child {
+  animation: textcolor2 3s linear infinite alternate;
+}
+
+@keyframes textcolor1 {
+  0% {
+    background-size: 0%;
+  }
+  40% {
+    background-size: 100%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+
+@keyframes textcolor2 {
+  0% {
+    background-size: 0%;
+  }
+  40% {
+    background-size: 0%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+
+.menu-icon {
+  display: none;
+}
+
+/* ------------Media Queries for navbar 
+( **** for small screen like mobile ****)  -------*/
+
+@media only screen and (max-width: 600px) {
+  nav ul {
+    position: absolute;
+    width: 100%;
+    background: #000;
+    color: #fff;
+    left: 0;
+    top: 100%;
+    text-align: center;
+    min-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s;
+  }
+  .nav-btn {
+    display: none;
+  }
+  nav.logo {
+    width: 150px;
+  }
+  nav ul li {
+    margin: 10px;
+    font-size: 15px;
+  }
+  .menu-icon {
+    display: block;
+    width: 30px;
+  }
+}
+
+.show-menu {
+  max-height: 60px;
+}
+
+/* ------------Media Queries for navbar -------*/
+
+@media only screen and (max-width: 600px) {
+  .header {
+    min-height: auto;
+    padding: 0;
+  }
+  .user-img {
+    width: 100%;
+    right: auto;
+    position: relative;
+    margin-top: 100px;
+  }
+  .header-content {
+    position: absolute;
+    bottom: 0;
+    padding: 0 10%;
+    z-index: 2;
+    padding-bottom: 40px;
+    background: linear-gradient(transparent, #fff);
+  }
+  .btn-container {
+    margin: 5px 0;
+  }
+  .header bottom {
+    font-size: 15px;
+    margin-right: 10px;
+  }
+  .btn-dark {
+    padding: 7px 7px 7px 22px;
+    margin-bottom: 12px;
+  }
+
+  .btn-dark img {
+    width: 35px;
+    padding: 10px;
+    margin-left: 20px;
+  }
+
+  .btn-light img {
+    width: 15px;
+    margin-left: 10px;
+  }
+  .header h1 {
+    font-size: 70px;
+    line-height: 60px;
+    margin-bottom: 20px;
+  }
+}
+
+/* --------------------------   Add sub menu in nav bar ------------- */
+
+.menu-bar {
+  text-align: center;
+  cursor: pointer;
+  border-radius: 50px;
+  color: #000;
+}
+.menu-bar li {
+  color: #000;
+}
+
+.active,
+.menu-bar ul li:hover {
+  background: linear-gradient(#eefff9 0%, #ffccc1 49%, #dcdbff 100%);
+  border-radius: 5%;
+}
+
+.menu-bar ul {
+  display: inline-flex;
+  list-style: none;
+}
+
+.menu-bar ul li {
+  width: 120px;
+  margin: 15px;
+  padding: 15px;
+}
+
+.menu-bar .fa {
+  margin-right: 6px;
+}
+/* 
+
+.menu-bar ul {
+  display: inline-flex;
+  list-style: none;
+  color: #fff;
+}
+
+.menu-bar ul li {
+  width: 120px;
+  margin: 15px;
+  padding: 15px;
+
+*/
